@@ -1,12 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import {useAuthStore} from "@/src/store/AuthStore";
 
 export function ParentProfileScreen() {
-  return (
+    const user = useAuthStore((state) => state.user);
+
+    return (
     <View>
-      <Text>ParentProfileScreen</Text>
+      <Text>{user!.email}</Text>
+        <Text>{user!.role}</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({});

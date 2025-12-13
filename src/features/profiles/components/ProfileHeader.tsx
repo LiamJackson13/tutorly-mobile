@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 type ProfileHeaderProps = {
   name: string;
-  role: "student" | "tutor" | "parent";
+  role: "student" | "tutor" | "parent" | null;
   email: string;
   avatarEmoji?: string;
   onEditPress?: () => void;

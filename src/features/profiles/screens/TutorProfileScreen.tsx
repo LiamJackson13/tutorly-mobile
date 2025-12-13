@@ -1,14 +1,17 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { ProfileHeader } from "../components/ProfileHeader";
+import {useAuthStore} from "@/src/store/AuthStore";
 
 export function TutorProfileScreen() {
-  return (
+    const user = useAuthStore((state) => state.user);
+
+    return (
     <ScrollView style={styles.container}>
       <ProfileHeader
-        name={"John Doe"}
-        role="tutor"
-        email={"john.doe@example.com"}
+        name={"Tutor Person"}
+        role={user!.role}
+        email={user!.email}
       />
 
       {/* Tutor-specific sections */}

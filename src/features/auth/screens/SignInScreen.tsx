@@ -15,7 +15,7 @@ import {
 import { useSignIn } from "../hooks/useSignIn";
 
 const SignInScreen = () => {
-  const { handleSignIn, data, signInError, isLoading } = useSignIn();
+  const { handleSignIn, signInError, isLoading } = useSignIn();
   const user = useAuthStore((state) => state.user);
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
@@ -91,7 +91,7 @@ const SignInScreen = () => {
           </TouchableOpacity>
 
           <View style={styles.footer}>
-            <Text style={styles.footerText}>Don't have an account? </Text>
+            <Text style={styles.footerText}>Don&#39;t have an account? </Text>
             <TouchableOpacity onPress={() => router.push("/(auth)/sign-up")}>
               <Text style={styles.linkText}>Sign Up</Text>
             </TouchableOpacity>
