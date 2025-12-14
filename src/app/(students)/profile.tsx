@@ -1,7 +1,7 @@
 import {ProfileScreen} from "@/src/features/profiles/screens";
 
-const TutorProfile = () => {
+const StudentProfile = () => {
     return <ProfileScreen/>;
 }
 
-export default TutorProfile;
+export default StudentProfile;
