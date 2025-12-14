@@ -1,8 +1,9 @@
-import { useAuthStore } from "@/src/store/AuthStore";
-import { Text } from "react-native";
-import { ParentProfileScreen } from "./ParentProfileScreen";
-import { StudentProfileScreen } from "./StudentProfileScreen";
-import { TutorProfileScreen } from "./TutorProfileScreen";
+import {useAuthStore} from "@/src/store/AuthStore";
+import {Text} from "react-native";
+import {ParentProfileScreen} from "./ParentProfileScreen";
+import {StudentProfileScreen} from "./StudentProfileScreen";
+import {TutorProfileScreen} from "./TutorProfileScreen";
+import React from "react";
 
 // Smart component that auto-selects based on role
 export function ProfileScreen() {

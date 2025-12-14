@@ -1,9 +1,20 @@
-import { router } from "expo-router";
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {router} from "expo-router";
+import React, {useEffect} from "react";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {useAuthStore} from "@/src/store/AuthStore";
 
 const HomeScreen = () => {
-  return (
+    const user = useAuthStore((state) => state.user);
+    const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+    useEffect(() => {
+        console.log("=== AUTH STORE ===");
+        console.log("User:", user);
+        console.log("Is Authenticated:", isAuthenticated);
+        console.log("==================");
+    }, [user, isAuthenticated]);
+
+    return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
       <TouchableOpacity onPress={() => router.push("/(auth)/sign-in")}>

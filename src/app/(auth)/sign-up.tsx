@@ -1,7 +1,6 @@
-import { GuestOnlyGuard } from "@/src/features/auth/components/GuestOnly";
+import {GuestOnlyGuard} from "@/src/features/auth/components/GuestOnly";
 import SignUpScreen from "@/src/features/auth/screens/SignUpScreen";
 import React from "react";
-import { StyleSheet } from "react-native";
 
 const SignUp = () => {
   return (
@@ -12,4 +11,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-const styles = StyleSheet.create({});

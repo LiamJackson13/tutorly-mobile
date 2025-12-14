@@ -1,13 +1,12 @@
-import { useAuthStore } from "@/src/store/AuthStore";
-import { useState } from "react";
-import { getUserRole } from "../api/getUserRole";
-import { signIn } from "../api/signIn";
+import {useAuthStore} from "@/src/store/AuthStore";
+import {useState} from "react";
+import {getUserRole} from "../api/getUserRole";
+import {signIn} from "../api/signIn";
 
 export const useSignIn = () => {
   const [data, setData] = useState<any>(null);
   const [signInError, setSignInError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [role, setRole] = useState();
   const loginUser = useAuthStore((state) => state.login);
 
   const handleSignIn = async (email: string, password: string) => {
