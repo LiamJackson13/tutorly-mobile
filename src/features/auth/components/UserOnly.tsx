@@ -1,6 +1,6 @@
-import { useAuthStore } from "@/src/store/AuthStore";
-import { Redirect } from "expo-router";
-import { ReactNode } from "react";
+import {useAuthStore} from "@/src/features/auth/store/AuthStore";
+import {Redirect} from "expo-router";
+import {ReactNode} from "react";
 
 type AuthGuardProps = {
   children: ReactNode;
