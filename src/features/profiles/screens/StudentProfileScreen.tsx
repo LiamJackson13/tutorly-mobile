@@ -1,7 +1,7 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { ProfileHeader } from "../components/ProfileHeader";
-import {useAuthStore} from "@/src/store/AuthStore";
+import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {ProfileHeader} from "../components/ProfileHeader";
+import {useAuthStore} from "@/src/features/auth/store/AuthStore";
 
 export function StudentProfileScreen() {
     const user = useAuthStore((state) => state.user);

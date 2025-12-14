@@ -1,4 +1,4 @@
-import {useAuthStore} from "@/src/store/AuthStore";
+import {useAuthStore} from "@/src/features/auth/store/AuthStore";
 import {Text} from "react-native";
 import {ParentProfileScreen} from "./ParentProfileScreen";
 import {StudentProfileScreen} from "./StudentProfileScreen";

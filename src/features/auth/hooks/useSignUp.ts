@@ -1,10 +1,10 @@
-import { useAuthStore } from "@/src/store/AuthStore";
-import { useState } from "react";
-import { createParent } from "../api/createParent";
-import { createStudent } from "../api/createStudent";
-import { createTutor } from "../api/createTutor";
-import { setUserRole } from "../api/setUserRole";
-import { signUp } from "../api/signUp";
+import {useAuthStore} from "@/src/features/auth/store/AuthStore";
+import {useState} from "react";
+import {createParent} from "../api/createParent";
+import {createStudent} from "../api/createStudent";
+import {createTutor} from "../api/createTutor";
+import {setUserRole} from "../api/setUserRole";
+import {signUp} from "../api/signUp";
 
 export const useSignUp = () => {
   const [data, setData] = useState<any>(null);

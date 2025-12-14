@@ -1,4 +1,4 @@
-import {useAuthStore} from "@/src/store/AuthStore";
+import {useAuthStore} from "@/src/features/auth/store/AuthStore";
 import {useState} from "react";
 import {getUserRole} from "../api/getUserRole";
 import {signIn} from "../api/signIn";
@@ -19,7 +19,6 @@ export const useSignIn = () => {
 
       // Get the user's role from the database
       const userRole = await getUserRole();
-      setRole(userRole.role);
 
       loginUser({ id: result.user.id, email: email, role: userRole.role });
       return result;
