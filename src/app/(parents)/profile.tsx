@@ -1,7 +1,8 @@
-import Profile from "@/src/app/(shared)/profile";
+import {ParentProfileScreen} from "@/src/features/profiles/screens";
 
 const ParentProfile = () => {
-    return <Profile/>;
+
+    return (<ParentProfileScreen/>)
 }
 
 export default ParentProfile;
