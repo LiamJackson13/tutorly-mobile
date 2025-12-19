@@ -10,7 +10,7 @@ export const GuestOnlyGuard = ({ children }: AuthGuardProps) => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   if (isAuthenticated) {
-    return <Redirect href="/(tabs)/dashboard" />;
+    return <Redirect href="/(app)/dashboard" />;
   }
 
   return <>{children}</>;
