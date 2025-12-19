@@ -7,7 +7,7 @@ export default function AppLayout() {
         name="dashboard/index"
         options={{ tabBarLabel: "Dashboard" }}
       />
-      <Tabs.Screen name="profile/index" options={{ tabBarLabel: "Profilem" }} />
+      <Tabs.Screen name="profile/index" options={{ tabBarLabel: "Profile" }} />
     </Tabs>
   );
 }
