@@ -5,7 +5,7 @@ import { ProfileHeader } from "@/src/features/profiles/components/ProfileHeader"
 import SignOutButton from "@/src/features/profiles/components/SignOutButton";
 import DevAccountDropdown from "../components/AccountSwitcherDropdown";
 
-export function TutorProfileScreen() {
+const TutorProfileScreen = () => {
   const user = useAuthStore((state) => state.user);
   if (!user) {
     return (
@@ -37,7 +37,9 @@ export function TutorProfileScreen() {
       {/* More tutor-specific content */}
     </ScrollView>
   );
-}
+};
+
+export default TutorProfileScreen;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff" },

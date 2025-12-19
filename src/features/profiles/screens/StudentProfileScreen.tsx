@@ -5,7 +5,7 @@ import { useAuthStore } from "@/src/features/auth/store/AuthStore";
 import SignOutButton from "@/src/features/profiles/components/SignOutButton";
 import DevAccountDropdown from "../components/AccountSwitcherDropdown";
 
-export function StudentProfileScreen() {
+const StudentProfileScreen = () => {
   const user = useAuthStore((state) => state.user);
   if (!user) {
     return <Text>Loading...</Text>;
@@ -36,7 +36,9 @@ export function StudentProfileScreen() {
       <SignOutButton />
     </ScrollView>
   );
-}
+};
+
+export default StudentProfileScreen;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff" },

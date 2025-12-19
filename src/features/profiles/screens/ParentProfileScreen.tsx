@@ -5,7 +5,7 @@ import { useAuthStore } from "@/src/features/auth/store/AuthStore";
 import SignOutButton from "@/src/features/profiles/components/SignOutButton";
 import DevAccountDropdown from "../components/AccountSwitcherDropdown";
 
-export function ParentProfileScreen() {
+const ParentProfileScreen = () => {
   const user = useAuthStore((state) => state.user);
   if (!user) {
     return (
@@ -40,7 +40,9 @@ export function ParentProfileScreen() {
       <SignOutButton />
     </ScrollView>
   );
-}
+};
+
+export default ParentProfileScreen;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff" },
