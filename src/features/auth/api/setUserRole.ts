@@ -1,7 +1,7 @@
-import { supabase } from "@/src/utils/supabase";
+import {supabase} from "@/src/utils/supabase";
 
 export const setUserRole = async (role: "student" | "tutor" | "parent") => {
-  // Get the currently logged in user
+  // Get the currently logged-in user
   const {
     data: { user },
     error: authError,

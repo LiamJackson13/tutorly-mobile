@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { TutorProfileScreen } from "@/src/features/profiles/screens";
 import { StudentProfileScreen } from "@/src/features/profiles/screens";
 import { ParentProfileScreen } from "@/src/features/profiles/screens";
-import { useAuthStore } from "@/src/store/AuthStore";
+import { useAuthStore } from "@/src/features/auth/store/AuthStore";
 
 const ProfileScreen = () => {
   const user = useAuthStore((state) => state.user);

@@ -1,18 +1,22 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { ProfileHeader } from "../components/ProfileHeader";
-import {useAuthStore} from "@/src/store/AuthStore";
+import { useAuthStore } from "@/src/features/auth/store/AuthStore";
+import { ProfileHeader } from "@/src/features/profiles/components/ProfileHeader";
+import SignOutButton from "@/src/features/profiles/components/SignOutButton";
+import DevAccountDropdown from "../components/AccountSwitcherDropdown";
 
 export function TutorProfileScreen() {
-    const user = useAuthStore((state) => state.user);
-
+  const user = useAuthStore((state) => state.user);
+  if (!user) {
     return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+  return (
     <ScrollView style={styles.container}>
-      <ProfileHeader
-        name={"Tutor Person"}
-        role={user!.role}
-        email={user!.email}
-      />
+      <ProfileHeader name={user.name} role={user.role} email={user.email} />
 
       {/* Tutor-specific sections */}
       <View style={styles.section}>
@@ -28,7 +32,8 @@ export function TutorProfileScreen() {
         <Text>Hourly Rate: ${50}</Text>
         <Text>Subjects: {"Math, Science, English"}</Text>
       </View>
-
+      <DevAccountDropdown />
+      <SignOutButton />
       {/* More tutor-specific content */}
     </ScrollView>
   );

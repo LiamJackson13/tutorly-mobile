@@ -1,18 +1,18 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { ProfileHeader } from "../components/ProfileHeader";
-import {useAuthStore} from "@/src/store/AuthStore";
+import { useAuthStore } from "@/src/features/auth/store/AuthStore";
+import SignOutButton from "@/src/features/profiles/components/SignOutButton";
+import DevAccountDropdown from "../components/AccountSwitcherDropdown";
 
 export function StudentProfileScreen() {
-    const user = useAuthStore((state) => state.user);
-
-    return (
+  const user = useAuthStore((state) => state.user);
+  if (!user) {
+    return <Text>Loading...</Text>;
+  }
+  return (
     <ScrollView style={styles.container}>
-      <ProfileHeader
-        name="Liam Jackson"
-        role="student"
-        email={user!.email}
-      />
+      <ProfileHeader name={user.name} role={user.role} email={user.email} />
 
       {/* Student-specific sections */}
       <View style={styles.section}>
@@ -32,6 +32,8 @@ export function StudentProfileScreen() {
         <Text style={styles.sectionTitle}>Your Tutors</Text>
         {/* List of tutors */}
       </View>
+      <DevAccountDropdown />
+      <SignOutButton />
     </ScrollView>
   );
 }
