@@ -7,7 +7,8 @@ type User = {
   id: string;
   email: string;
   role: "student" | "tutor" | "parent";
-  name: string | "User";
+  first_name: string | "User";
+  last_name?: string;
   phone?: string;
 };
 
